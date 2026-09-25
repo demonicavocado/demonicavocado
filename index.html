@@ -83,12 +83,25 @@ enter<!DOCTYPE html>
 
             let password = document.getElementById("password").value;
 
-            if (password.toLowerCase() === "cute cat") {
+           if (password.toLowerCase() === "kawaiineko") {
+            
+                document.body.innerHTML = `
+                    <h1>Stage 3</h1>
+            
+                    <p>
+                        Red is my color.<br>
+                        I head straight to my objective, to my prey,<br>
+                        before becoming myself the prey because of a big yellow dot.
+                    </p>
+            
+                    <input id="riddleAnswer" type="text">
+            
+                    <button onclick="checkRiddle()">Submit</button>
+            
+                    <p id="riddleError"></p>
+                `;
 
-                document.body.innerHTML =
-                    "<h1>Correct.</h1>" +
-                    "<p>Something has been unlocked...</p>";
-
+            }
             } else {
 
                 document.getElementById("error").textContent =
@@ -97,6 +110,24 @@ enter<!DOCTYPE html>
             }
 
         }
+
+        function checkRiddle() {
+
+    let answer = document.getElementById("riddleAnswer").value;
+
+    if (answer.toLowerCase() === "blinky") {
+
+        document.getElementById("riddleError").textContent =
+            "Correct.";
+
+    } else {
+
+        document.getElementById("riddleError").textContent =
+            "Incorrect.";
+
+    }
+
+}
 
     </script>
 
